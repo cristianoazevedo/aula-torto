@@ -9,7 +9,8 @@ describe('IndexService', function () {
     it('Inserir um array e verificar seu length', function () {
         var berr = { nome: 'Skol', teor: '10' };
         service.insert(berr);
-        expect(service.getAll().length).toEqual(1)
+        expect(service.getAll().length).toEqual(1);
+        expect(service.getAll()[0].nome).toEqual(berr.nome);
     });
 
     it('Remover um elemento do array e verificar seu length', function () {
@@ -19,5 +20,6 @@ describe('IndexService', function () {
         service.insert(brahma);
         service.remove(0);
         expect(service.getAll().length).toEqual(1)
+        expect(service.getAll()[0].nome).toEqual(brahma.nome);
     });
 });
