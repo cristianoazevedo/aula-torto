@@ -1,0 +1,31 @@
+<div class="container">
+	<h1>Crud Beer</h1>
+	<form>
+		<div class="form-group">
+			<label>Nome</label>
+			<input type="text" class="form-control" ng-model="beer.nome">
+		</div>
+		<div class="form-group">
+			<label>Teor Alcoólico</label>
+			<input type="number" class="form-control" ng-model="beer.teor">
+		</div>
+        <button type="submit" class="btn btn-default" ng-click="insert()">Salvar</button>
+	</form>
+	<table class="table ">
+		<thead>
+			<th>Nome</th>
+			<th>Teor Alcoólico</th>
+			<th>Ações</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="b in list">
+				<td>{{b.nome}}</td>
+				<td>{{b.teor}}%</td>
+				<td>
+					<button type="button" class="btn btn-danger" ng-click="remove($index)">Excluir</button>
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>
